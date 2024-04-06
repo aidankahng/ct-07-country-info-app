@@ -7,7 +7,7 @@ function createElements() {
 
     // Create elements for country name, flag, currencies, capital, languages
     let flag = document.createElement('img')
-    flag.setAttribute('width', '500px')
+    flag.setAttribute('width', '300px')
     flag.id = 'country-flag';
     let name = document.createElement('h1')
     name.id = 'country-name';
