@@ -1,4 +1,3 @@
-createElements();
 pageSetup();
 
 // Create elements to place information:
@@ -32,6 +31,8 @@ function pageSetup() {
 
 // Uses Fetch API to get data from restcountries and display via call to nicelyDisplayData
 function showCountry(e) {
+    document.getElementById('country-info').innerHTML = ''; // reset elements
+    createElements();
     e.preventDefault();
     let countryName = document.getElementById('countryInput').value;
     const apiUrl = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
