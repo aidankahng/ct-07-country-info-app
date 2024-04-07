@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    margin: 0px auto;
+}
+
+
+body {
+    background-color: #aeafb9;
+
+}
+
+
+button {
+    padding: 2px 1px;
+}
+
+
+input {
+    padding: 2px 1px;
+}
+
+
+.row {
+    margin-top: 5px;
+    margin-left: 10px;
+}
