@@ -11,11 +11,11 @@ function createElements() {
     flag.id = 'country-flag';
     let name = document.createElement('h1')
     name.id = 'country-name';
-    let currencies = document.createElement('p')
+    let currencies = document.createElement('ul')
     currencies.id = 'country-currencies';
     let capital = document.createElement('h3')
     capital.id = 'country-capital';
-    let languages = document.createElement('p')
+    let languages = document.createElement('ul')
     languages.id = 'country-languages';
 
     let to_show = [name, flag, capital, languages, currencies];
@@ -58,19 +58,27 @@ function nicelyDisplayData(countryData) {
     // Currencies
     let currencyObj = targetCountry.currencies;
     let currencyList = Object.values(currencyObj);
-    console.log(currencyList)
-    let all_currencies = "";
+    let currencyTitle = document.createElement('h4')
+    currencyTitle.innerHTML = `The currency of ${country_name}:`;
+    document.getElementById('country-currencies').before(currencyTitle);
     for (let currency of currencyList){
-        all_currencies = all_currencies + " " + currency.name;
+        let item = document.createElement('li')
+        item.innerHTML = `<b>${currency.name} (${currency.symbol})</b>`
+        document.getElementById('country-currencies').append(item);
     }
-    document.getElementById('country-currencies').innerHTML = `The currencies of ${country_name} are: <b>${all_currencies}</b>`;
-
+    
     // Capital
     document.getElementById('country-capital').innerHTML = `Capital: ${targetCountry.capital[0]}`;
     
     // Languages
-    langList = Object.values(targetCountry.languages).toString();
-    display_lang = "Official Languages include: " + '<b>' + langList + '</b>';
-    document.getElementById('country-languages').innerHTML = display_lang
+    langList = Object.values(targetCountry.languages);
+    let langTitle = document.createElement('h4')
+    langTitle.innerHTML = "Official Languages:";
+    document.getElementById('country-languages').before(langTitle);
+    for (let i = 0; i < langList.length; i++) {
+        let lang = document.createElement('li');
+        lang.innerHTML = `<b>${langList[i.toString()]}</b>`;
+        document.getElementById('country-languages').append(lang);
+    }
 
 }
