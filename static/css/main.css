@@ -3,24 +3,19 @@
     margin: 0px auto;
 }
 
-
 body {
     background-color: #aeafb9;
-
 }
 
-
-button {
+#countryInputButton {
     padding: 2px 1px;
 }
 
-
-input {
+#countryInput {
     padding: 2px 1px;
 }
-
 
 .row {
     margin: 10px;
-    width: 320px;
+    width: 300px;
 }
